@@ -18,7 +18,7 @@ export function Home() {
           </p>
         </div>
 
-        <div className="flex flex-1 items-center justify-center">
+        <div className="hidden sm:flex flex-1 items-center justify-center">
           <Image
             src={DataAnalytics}
             alt="image"
@@ -33,7 +33,7 @@ export function Home() {
           activeClass="active"
           smooth={true}
           to={'blog'}
-          offset={-200}
+          offset={-150}
           duration={100}
         >
           <div className="absolute flex items-center justify-center bottom-0 left-0 right-0 ml-auto mr-auto animate-bounce bg-zinc-700 p-4 w-max rounded-full cursor-pointer">
