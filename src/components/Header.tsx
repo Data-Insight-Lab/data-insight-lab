@@ -1,44 +1,11 @@
 'use client';
 import { cx } from '@/helpers/cx';
 import Image from 'next/image';
-import { AnchorHTMLAttributes, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiMenuAlt4 } from 'react-icons/hi';
+import { Link } from 'react-scroll';
 import Logo from '../../public/logo.png';
-
-interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  label: string;
-  selected: string;
-}
-interface NaveBarItems {
-  title: string;
-  id: string;
-}
-
-function NavbarItem({ label, selected, ...rest }: Props) {
-  const href = label.toLowerCase();
-  const isSelected = href === selected;
-
-  return (
-    <li>
-      <a
-        href={`#${href}`}
-        className={cx(
-          `text-neutral-200 text-2xl cursor-pointer font-medium
-           hover:text-neutral-50 transition-all duration-500
-           md:text-lg
-           `,
-          isSelected &&
-            `border-b border-current transition-all duration-500
-             text-neutral-50`
-        )}
-        {...rest}
-      >
-        {label}
-      </a>
-    </li>
-  );
-}
 
 const naveBarItems: NaveBarItems[] = [
   { title: 'Home', id: 'home' },
@@ -47,98 +14,59 @@ const naveBarItems: NaveBarItems[] = [
   { title: 'Contact', id: 'contact' },
 ];
 
+interface Props {
+  label: string;
+  selected: string;
+}
+interface NaveBarItems {
+  title: string;
+  id: string;
+}
+
+function NavbarItem({ label, selected }: Props) {
+  const href = label.toLowerCase();
+  const isSelected = href === selected;
+
+  return (
+    <li
+      className={cx(
+        `text-neutral-200 text-2xl cursor-pointer font-medium
+           hover:text-neutral-50 transition-all duration-500
+           md:text-lg
+           `,
+        isSelected &&
+          `border-b border-current transition-all duration-500
+             text-neutral-50`
+      )}
+    >
+      {label}
+    </li>
+  );
+}
+
 export function Header() {
   const [selected, setSelected] = useState('home');
   const [toggleMenu, setToggleMenu] = useState(false);
   const [animated, setAnimated] = useState('animate-slide-in');
 
-  const [activeSection, setActiveSection] = useState(0);
-  const scrollingRef = useRef(false);
-  const scrollingAutomatically = useRef(false);
-  const animationRef = useRef(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollingAutomatically.current || scrollingRef.current) return;
-
-      const sections = document.querySelectorAll<HTMLElement>('section');
-      const sectionsPos = Array.from(sections).map(section => ({
-        top: section.offsetTop,
-        height: section.offsetHeight,
-      }));
-
-      const scrollPos = window.scrollY;
-
-      const activeIndex = sectionsPos.findIndex(
-        ({ top, height }) =>
-          top <= scrollPos + window.innerHeight * 0.9 &&
-          top + height >= scrollPos + window.innerHeight * 0.9
+  function navLinks() {
+    return naveBarItems.map(item => {
+      const offset = item.id === 'home' ? 0 : -200;
+      return (
+        <Link
+          key={item.id}
+          spy
+          activeClass="active"
+          smooth={true}
+          to={item.id}
+          duration={100}
+          offset={offset}
+          onSetActive={() => setSelected(item.id)}
+        >
+          <NavbarItem key={item.id} label={item.title} selected={selected} />
+        </Link>
       );
-
-      if (activeIndex !== -1 && activeIndex !== activeSection) {
-        scrollingRef.current = true;
-        const targetPos = sections[activeIndex].offsetTop;
-        const step = (targetPos - scrollPos) / 20;
-        const scroll = () => {
-          const newPos = window.scrollY + step;
-          if (
-            (step > 0 && newPos >= targetPos) ||
-            (step < 0 && newPos <= targetPos)
-          ) {
-            window.scrollTo(0, targetPos);
-            setActiveSection(activeIndex);
-            setSelected(naveBarItems[activeIndex].id);
-            scrollingRef.current = false;
-          } else {
-            window.scrollTo(0, newPos);
-            animationRef.current = window.requestAnimationFrame(scroll);
-          }
-        };
-        animationRef.current = window.requestAnimationFrame(scroll);
-      }
-
-      const prevIndex = activeSection - 1;
-      if (
-        prevIndex >= 0 &&
-        sectionsPos[prevIndex].top + sectionsPos[prevIndex].height >=
-          scrollPos + window.innerHeight * 0.1
-      ) {
-        scrollingRef.current = true;
-        const targetPos = sections[prevIndex].offsetTop;
-        const step = (targetPos - scrollPos) / 20;
-        const scroll = () => {
-          const newPos = window.scrollY + step;
-          if (
-            (step > 0 && newPos >= targetPos) ||
-            (step < 0 && newPos <= targetPos)
-          ) {
-            window.scrollTo(0, targetPos);
-            setActiveSection(prevIndex);
-            setSelected(naveBarItems[prevIndex].id);
-            scrollingRef.current = false;
-          } else {
-            window.scrollTo(0, newPos);
-            animationRef.current = window.requestAnimationFrame(scroll);
-          }
-        };
-        animationRef.current = window.requestAnimationFrame(scroll);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection]);
-
-  useEffect(() => {
-    return () => window.cancelAnimationFrame(animationRef.current);
-  }, [activeSection]);
-
-  function handleChangeNav(href: string) {
-    scrollingAutomatically.current = true;
-    setSelected(href);
-    setTimeout(() => {
-      scrollingAutomatically.current = false;
-    }, 1000);
+    });
   }
 
   return (
@@ -154,16 +82,7 @@ export function Header() {
 
         <nav>
           <div className="md:flex hidden">
-            <ul className="flex flex-row gap-4">
-              {naveBarItems.map(item => (
-                <NavbarItem
-                  key={item.id}
-                  label={item.title}
-                  selected={selected}
-                  onClick={() => handleChangeNav(item.id)}
-                />
-              ))}
-            </ul>
+            <ul className="flex flex-row gap-4">{navLinks()}</ul>
           </div>
 
           <div className="md:hidden flex relative">
@@ -198,14 +117,7 @@ export function Header() {
                     }}
                   />
                 </li>
-                {naveBarItems.map(item => (
-                  <NavbarItem
-                    key={item.id}
-                    label={item.title}
-                    selected={selected}
-                    onClick={() => handleChangeNav(item.id)}
-                  />
-                ))}
+                {navLinks()}
               </ul>
             )}
           </div>
