@@ -8,7 +8,7 @@ interface Props {
 }
 export function Animation({ children }: Props) {
   const [ref, inView] = useInView({
-    threshold: 0.8,
+    threshold: 0.7,
     triggerOnce: true,
   });
 

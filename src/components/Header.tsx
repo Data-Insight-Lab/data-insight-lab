@@ -72,13 +72,17 @@ export function Header() {
   return (
     <header>
       <div className="fixed w-full z-10 top-0 px-4 py-6 flex flex-row justify-between items-center bg-opacity-30 bg-zinc-950 backdrop-filter backdrop-blur-xl">
-        <a
-          href="home"
-          className="flex gap-4 items-center text-xl font-bold text-gradient"
+        <Link
+          spy
+          activeClass="active"
+          smooth={true}
+          to="home"
+          duration={100}
+          className="flex gap-4 items-center text-xl font-bold text-gradient cursor-pointer"
         >
-          <Image src={Logo} alt="logo" height={40} width={40} />
+          <Image src={Logo} alt="logo" height={60} width={60} />
           Data Insight Lab
-        </a>
+        </Link>
 
         <nav>
           <div className="md:flex hidden">
@@ -105,18 +109,19 @@ export function Header() {
 
             {toggleMenu && (
               <ul
-                className={`z-10 fixed top-0 -right-2 p-3 w-[50vw] h-screen shadow-2xl
+                className={`z-10 fixed top-0 -right-2 p-4 w-[50vw] h-screen shadow-2xl
             md:hidden list-none flex flex-col justify-start items-end rounded-md
             glassmorphism text-white ${animated}`}
               >
-                <li className="text-xl w-full my-2 cursor-pointer">
+                <div className="text-xl w-full my-2 cursor-pointer">
                   <AiOutlineClose
                     onClick={() => {
                       setAnimated('animate-slide-out');
                       setTimeout(() => setToggleMenu(false), 500);
                     }}
                   />
-                </li>
+                </div>
+
                 {navLinks()}
               </ul>
             )}

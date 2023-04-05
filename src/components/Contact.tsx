@@ -12,7 +12,7 @@ function TextInput({ ...rest }: Props) {
 export function Contact() {
   return (
     <Animation>
-      <div className="my-40 flex flex-col justify-center items-center px-4 max-w-lg mx-auto">
+      <div className="my-52 flex flex-col justify-center items-center px-4 max-w-lg mx-auto">
         <h1 className="mb-10 text-2xl font-normal">
           Get in contact for more information
         </h1>

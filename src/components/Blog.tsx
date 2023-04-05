@@ -5,7 +5,7 @@ import { Animation } from './Animation';
 export function Blog() {
   return (
     <Animation>
-      <div className="my-40 flex flex-col items-center justify-center px-4 text-center bg-gradient-blog">
+      <div className="my-52 flex flex-col items-center justify-center px-4 text-center bg-gradient-blog">
         <h1 className="text-3xl mb-4 font-bold">
           Why invest in Data Intelligence?
         </h1>
