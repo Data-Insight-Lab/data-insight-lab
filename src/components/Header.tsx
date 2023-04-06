@@ -1,73 +1,16 @@
 'use client';
-import { cx } from '@/helpers/cx';
 import Image from 'next/image';
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { Link } from 'react-scroll';
 import Logo from '../../public/logo.png';
-
-const naveBarItems: NaveBarItems[] = [
-  { title: 'Home', id: 'home' },
-  { title: 'Blog', id: 'blog' },
-  { title: 'Services', id: 'services' },
-  { title: 'Contact', id: 'contact' },
-];
-
-interface Props {
-  label: string;
-  selected: string;
-}
-interface NaveBarItems {
-  title: string;
-  id: string;
-}
-
-function NavbarItem({ label, selected }: Props) {
-  const href = label.toLowerCase();
-  const isSelected = href === selected;
-
-  return (
-    <li
-      className={cx(
-        `text-neutral-200 text-2xl cursor-pointer font-medium
-           hover:text-neutral-50 transition-all duration-500
-           md:text-lg
-           `,
-        isSelected &&
-          `border-b border-current transition-all duration-500
-             text-neutral-50`
-      )}
-    >
-      {label}
-    </li>
-  );
-}
+import { NavLinks } from './NavLinks';
 
 export function Header() {
   const [selected, setSelected] = useState('home');
   const [toggleMenu, setToggleMenu] = useState(false);
   const [animated, setAnimated] = useState('animate-slide-in');
-
-  function navLinks() {
-    return naveBarItems.map(item => {
-      const offset = item.id === 'home' ? 0 : -200;
-      return (
-        <Link
-          key={item.id}
-          spy
-          activeClass="active"
-          smooth={true}
-          to={item.id}
-          duration={100}
-          offset={offset}
-          onSetActive={() => setSelected(item.id)}
-        >
-          <NavbarItem key={item.id} label={item.title} selected={selected} />
-        </Link>
-      );
-    });
-  }
 
   return (
     <header>
@@ -86,7 +29,9 @@ export function Header() {
 
         <nav>
           <div className="md:flex hidden">
-            <ul className="flex flex-row gap-4">{navLinks()}</ul>
+            <ul className="flex flex-row gap-4">
+              <NavLinks selected={selected} setSelected={setSelected} />
+            </ul>
           </div>
 
           <div className="md:hidden flex relative">
@@ -122,7 +67,7 @@ export function Header() {
                   />
                 </div>
 
-                {navLinks()}
+                <NavLinks selected={selected} setSelected={setSelected} />
               </ul>
             )}
           </div>

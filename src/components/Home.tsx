@@ -1,8 +1,9 @@
 'use client';
+import { home } from '@/constants/home';
 import Image from 'next/image';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import { Link } from 'react-scroll';
-import DataAnalytics from '../../public/data-analytics.jpg';
+
 import { Animation } from './Animation';
 
 export function Home() {
@@ -11,16 +12,15 @@ export function Home() {
       <div className="h-screen bg-gradient flex gap-4 px-4">
         <div className="flex flex-1 flex-col justify-center">
           <h1 className="text-6xl font-bold">
-            Data & Analytics <p className="text-gradient">Solutions</p>
+            {home.title.base}{' '}
+            <p className="text-gradient">{home.title.highlighted}</p>
           </h1>
-          <p className="text-sm text-white font-normal mt-4">
-            Developing end to end solutions in the most efficient way
-          </p>
+          <p className="text-sm text-white font-normal mt-4">{home.content}</p>
         </div>
 
         <div className="hidden sm:flex flex-1 items-center justify-center">
           <Image
-            src={DataAnalytics}
+            src={home.image}
             alt="image"
             height={400}
             width={700}
