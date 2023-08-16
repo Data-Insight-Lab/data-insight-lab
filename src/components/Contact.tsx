@@ -25,9 +25,14 @@ export function Contact() {
             placeholder="Leave a message"
             className="text-input min-h-[150px] border-[.5px] border-zinc-700"
           />
-
+          
           <button className="button mt-10">Send</button>
         </form>
+        <div className="mt-4">
+          <a href="https://www.youtube.com">
+            <div className="bg-blue-500 p-4 rounded-lg text-white">Click here for more info</div>
+          </a>
+          </div>
       </div>
     </Animation>
   );

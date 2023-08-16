@@ -1,3 +1,4 @@
+import { AboutUs } from '@/components/Aboutus';
 import { Blog } from '@/components/Blog';
 import { Contact } from '@/components/Contact';
 import { Home } from '@/components/Home';
@@ -8,6 +9,10 @@ export default function App() {
     <div className="mx-auto max-w-5xl">
       <section id="home">
         <Home />
+      </section>
+
+      <section id="aboutus">
+        <AboutUs />
       </section>
 
       <section id="blog">
