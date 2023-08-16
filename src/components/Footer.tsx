@@ -1,4 +1,4 @@
-import { AiFillInstagram, AiFillLinkedin, AiFillYoutube } from 'react-icons/ai';
+import { AiFillInstagram, AiFillLinkedin, AiFillYoutube, AiOutlineWhatsApp } from 'react-icons/ai';
 
 export function Footer() {
   return (
@@ -20,9 +20,15 @@ export function Footer() {
             name="instagram"
             className="h-6 w-6 text-neutral-200 hover:text-white"
           />
+          <a href='https://www.youtube.com/'>
           <AiFillYoutube
             name="youtube"
             className="h-6 w-6 text-neutral-200 hover:text-white"
+          />
+          </a>
+          <AiOutlineWhatsApp
+          name="whatsapp"
+          className="h-6 w-6 text-neutral-200 hover:text-white"
           />
         </div>
       </div>
