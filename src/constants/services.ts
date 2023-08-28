@@ -2,17 +2,19 @@ import { BsDatabaseAdd } from 'react-icons/bs';
 import { RiDashboardLine } from 'react-icons/ri';
 import { TbDeviceAnalytics } from 'react-icons/tb';
 
+
+
 export const services = [
   {
     id: '1',
-    title: 'Collecting and Storing Data',
+    title: 'Data Science',
     content:
-      'Acquire data from multiple sources, storing, cataloging, and developing them is the key to success.',
+      'Get ahead of the competition by using data in your favor.',
     icon: BsDatabaseAdd,
   },
   {
     id: '2',
-    title: 'Smart Dashboards',
+    title: 'Data Engineering',
     content:
       'Dynamically visualize your data. Have useful dashboards using the most, powerful analytics platform that fits company needs.',
     icon: RiDashboardLine,
@@ -25,3 +27,4 @@ export const services = [
     icon: TbDeviceAnalytics,
   },
 ];
+

@@ -1,6 +1,7 @@
 import { blog } from '@/constants/blog';
 import Image from 'next/image';
 import { Animation } from './Animation';
+import { RiAlignCenter } from 'react-icons/ri';
 
 export function Blog() {
   return (
@@ -17,6 +18,12 @@ export function Blog() {
           className="rounded-lg"
         />
       </div>
+      <div className="mt-3 items-center justify-center text-center">
+        <a href="#contact">
+        <button className="button mt-10">If you want to become data driven click here</button>
+          </a>
+          </div>
     </Animation>
   );
 }
+        
