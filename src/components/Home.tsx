@@ -3,7 +3,6 @@ import { home } from '@/constants/home';
 import Image from 'next/image';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import { Link } from 'react-scroll';
-
 import { Animation } from './Animation';
 
 export function Home() {
@@ -41,6 +40,11 @@ export function Home() {
           </div>
         </Link>
       </div>
+      <div className="mt-3 items-center justify-center text-center">
+        <a href="#contact">
+        <button className="button mt-10">Click here for more info</button>
+          </a>
+          </div>
     </Animation>
   );
 }
