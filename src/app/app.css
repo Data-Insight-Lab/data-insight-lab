@@ -79,15 +79,16 @@
 }
 
 .image-gallery {
-  display: flex;
-  gap: 20px; 
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px; 
   justify-content: center; 
   align-items: center; 
+  width: calc(70% - 50px);
+  height: auto; 
+  max-width: 100%; 
 }
 
-.gallery-image {
-  border-radius: 50%; 
-}
 .aboutus-image-container {
   display: flex;
   justify-content: center;
