@@ -4,6 +4,10 @@ import GrafanaImage from '../../public/grafana.png';
 import SQLImage from '../../public/sql.png';
 import SupersetImage from '../../public/superset.png';
 import TableauImage from '../../public/tableau.png';
+import AWSImage from '../../public/aws.png';
+import RedshiftImage from '../../public/redshift.png';
+import PostgresImage from '../../public/postgres.png';
+import AirFlowImage from '../../public/airflow.png';
 import React from 'react';
 import Image from 'next/image';
 import { Animation } from './Animation';
@@ -26,40 +30,59 @@ export function AboutUs() {
 
                 <h2 className="text-2xl my-6">Our Tools</h2>
                 <div className="image-gallery">
-                    <Image
-                        src={PowerBIImage}
-                        alt="Power BI"
-                        height={100}
-                        width={100}
-                        className="gallery-image"
-                    />
+                <Image
+                        src={RedshiftImage}
+                        alt="Redshift"
+                        height={150}
+                        width={150}
+                    />                   
                     <Image
                         src={GrafanaImage}
                         alt="Grafana"
-                        height={100}
-                        width={100}
-                        className="gallery-image"
+                        height={70}
+                        width={70}
                     />
                     <Image
                         src={SQLImage}
                         alt="SQL"
                         height={100}
                         width={100}
-                        className="gallery-image"
                     />
                     <Image
                         src={SupersetImage}
                         alt="Superset"
-                        height={100}
-                        width={100}
-                        className="gallery-image"
+                        height={80}
+                        width={80}
                     />
                     <Image
                         src={TableauImage}
                         alt="Tableau"
-                        height={100}
-                        width={100}
-                        className="gallery-image"
+                        height={110}
+                        width={110}
+                    />
+                    <Image
+                        src={PowerBIImage}
+                        alt="Power BI"
+                        height={120}
+                        width={120}
+                    />
+                    <Image
+                        src={PostgresImage}
+                        alt="Postgres"
+                        height={80}
+                        width={80}
+                    />
+                    <Image
+                        src={AirFlowImage}
+                        alt="Airflow"
+                        height={180}
+                        width={180}
+                    />
+                    <Image
+                        src={AWSImage}
+                        alt="AWS"
+                        height={80}
+                        width={80}
                     />
                 </div>
             </div>
