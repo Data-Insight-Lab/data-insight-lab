@@ -46,8 +46,9 @@
   }
   .black-box {
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    margin: 20px auto; 
+    padding: 30px;
+    margin: 30px auto; 
+    font-size: 20px;
     border-radius: 10px;
     width: 90%; /* Adjust the width */
     max-width: 500px; /* Adjust the max-width */
@@ -70,6 +71,7 @@
     color: white; 
     flex-basis: calc(50% - 10px);
     margin-bottom: 20px; 
+    font-size: 20px
   }
   
 .step-icon {
@@ -93,5 +95,16 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px; 
+}
+h1 {
+  font-size: 36px; 
+}
+.button {
+  padding: 16px 24px; 
+  font-size: 20px; 
+}
+.text-input {
+  padding: 12px; 
+  font-size: 18px; 
 }
 }

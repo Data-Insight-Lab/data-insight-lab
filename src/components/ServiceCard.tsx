@@ -11,12 +11,12 @@ export function ServiceCard({ title, content, icon }: Props) {
   return (
     <div
       className="w-full p-4 border rounded-2xl border-zinc-800 
-    glassmorphism md:min-h-[350px]"
+    glassmorphism md:min-h-[450px]"
     >
-      <Icon className="h-16 w-16 rounded-xl text-white" />
+      <Icon className="h-20 w-20 rounded-xl text-white" />
 
-      <p className="text-lg font-medium my-2">{title}</p>
-      <p className="text-sm font-light">{content}</p>
+      <p className="text-xl font-medium my-2">{title}</p>
+      <p className="text-base font-light">{content}</p>
     </div>
   );
 }

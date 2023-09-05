@@ -8,21 +8,21 @@ import { Animation } from './Animation';
 export function Home() {
   return (
     <Animation>
-      <div className="h-screen bg-gradient flex gap-4 px-4">
+      <div className="h-screen bg-gradient flex gap-5 px-5">
         <div className="flex flex-1 flex-col justify-center">
-          <h1 className="text-6xl font-bold">
+          <h1 className="text-7xl font-bold">
             {home.title.base}{' '}
             <p className="text-gradient">{home.title.highlighted}</p>
           </h1>
-          <p className="text-sm text-white font-normal mt-4">{home.content}</p>
+          <p className="text-lg text-white font-normal mt-4">{home.content}</p>
         </div>
 
         <div className="hidden sm:flex flex-1 items-center justify-center">
           <Image
             src={home.image}
             alt="image"
-            height={400}
-            width={700}
+            height={550}
+            width={900}
             className="rounded-3xl"
           />
         </div>
