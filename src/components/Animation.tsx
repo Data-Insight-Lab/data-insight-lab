@@ -8,13 +8,13 @@ interface Props {
 }
 export function Animation({ children }: Props) {
   const [ref, inView] = useInView({
-    threshold: 0.7,
+    threshold: 0.6,
     triggerOnce: true,
   });
 
   const animation = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
   };
   return (
     <motion.div
