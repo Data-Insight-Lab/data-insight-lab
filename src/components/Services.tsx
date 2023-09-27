@@ -23,7 +23,6 @@ export function Services() {
           <ServiceCard key={item.id} title={item.title} content={item.content} icon={item.icon} />
         ))}
       </div>
-      <div className="my-52 flex flex-col md:flex-row md:justify-normal items-center justify-center gap-2 bg-gradient-services px-2"></div>
       <div className="black-box">
         <h2 className="box-title">Step-by-Step Contact</h2>
         <div className="step-list">

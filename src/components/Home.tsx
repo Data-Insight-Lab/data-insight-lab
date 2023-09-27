@@ -32,6 +32,7 @@ export function Home() {
           activeClass="active"
           smooth={true}
           to={'blog'}
+          
           offset={-150}
           duration={100}
         >

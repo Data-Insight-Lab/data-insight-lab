@@ -24,27 +24,49 @@ export const ContactForm = () => {
     }
   };
 
+  
   return (
     <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
       <label className="text-gray-700">Name</label>
       <input
         type="text"
         name="user_name"
-        className="border p-2 bg-gray-200"
-        style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
+        className="border p-2 bg-black text-white" 
+        style={{ backgroundColor: 'black', color: 'white' }}
+      />
+      <label className="text-gray-700">Company Name</label>
+      <input
+        type="text"
+        name="user_company"
+        className="border p-2 bg-black text-white" 
+        style={{ backgroundColor: 'black', color: 'white' }}
+      />
+      <label className="text-gray-700">Phone Number</label>
+      <input
+        type="text"
+        name="user_phone"
+        className="border p-2 bg-black text-white" 
+        style={{ backgroundColor: 'black', color: 'white' }}
+      />
+      <label className="text-gray-700">Country</label>
+      <input
+        type="text"
+        name="user_country"
+        className="border p-2 bg-black text-white" 
+        style={{ backgroundColor: 'black', color: 'white' }}
       />
       <label className="text-gray-700">Email</label>
       <input
         type="email"
         name="user_email"
-        className="border p-2 bg-gray-200"
-        style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
+        className="border p-2 bg-black text-white" 
+        style={{ backgroundColor: 'black', color: 'white' }}
       />
-      <label className="text-gray-700">Message</label>
+      <label className="text-gray-700">How can we help</label>
       <textarea
         name="message"
-        className="border p-2 bg-gray-200"
-        style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
+        className="border p-2 bg-black text-white" 
+        style={{ backgroundColor: 'black', color: 'white' }}
       />
       <button
         type="submit"
@@ -55,4 +77,3 @@ export const ContactForm = () => {
     </form>
   );
 };
-
