@@ -3,6 +3,7 @@ import { Blog } from '@/components/Blog';
 import { Contact } from '@/components/Contact';
 import { Home } from '@/components/Home';
 import { Services } from '@/components/Services';
+import { FAQ } from '@/components/FAQ';
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
         <Home />
       </section>
 
-      <section id="aboutus">
+      <section id="about">
         <AboutUs />
       </section>
 
@@ -25,6 +26,10 @@ export default function App() {
 
       <section id="contact">
         <Contact />
+      </section>
+
+      <section id="faq">
+        <FAQ />
       </section>
     </div>
   );
