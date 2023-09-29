@@ -41,7 +41,7 @@ export function Services() {
       </div>
       <div className="mt-3 items-center justify-center text-center">
         <a href="#contact">
-          <button className="button mt-10">Get your consult right now</button>
+        <button className="button mt-10 custom-button">Get your consult right now</button>
         </a>
       </div>
     </Animation>

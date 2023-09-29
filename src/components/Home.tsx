@@ -21,12 +21,10 @@ export function Home() {
           <Image
             src={home.image}
             alt="image"
-            height={550}
-            width={900}
+            style={{ height: '22rem', width: '33rem' }}
             className="rounded-3xl"
           />
         </div>
-
         <Link
           spy
           activeClass="active"
@@ -43,7 +41,7 @@ export function Home() {
       </div>
       <div className="mt-3 items-center justify-center text-center">
         <a href="#contact">
-        <button className="button mt-10">Click here for more info</button>
+        <button className="button mt-10 custom-button">Click here for more info</button>
           </a>
           </div>
     </Animation>
