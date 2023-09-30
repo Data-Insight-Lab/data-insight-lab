@@ -6,7 +6,7 @@ export function Footer() {
       <div>
         <p>Data Inside Lab</p>
         <p className="text-xs text-neutral-400 mt-4">
-          @2023 Data Inside Lab. All rights reserved
+          @2023 Data Insight Lab. All rights reserved
         </p>
       </div>
 
