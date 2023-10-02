@@ -2,11 +2,15 @@ import { blog } from '@/constants/blog';
 import Image from 'next/image';
 import { Animation } from './Animation';
 import { RiAlignCenter } from 'react-icons/ri';
+import Head from 'next/head';
 
 export function Blog() {
   return (
     <Animation>
       <div className="my-52 flex flex-col md:flex-row items-center justify-center px-4 text-center bg-gradient-blog">
+      <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <div className="md:w-1/2 md:mr-6">
           <Image
             src={blog.image}

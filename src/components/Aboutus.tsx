@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React from 'react';
 import Image from 'next/image';
 import { aboutus } from '@/constants/aboutus';
@@ -16,6 +17,9 @@ export function AboutUs() {
   return (
     <Animation>
       <div className="my-52 text-center bg-gradient-blog px-4 py-8">
+      <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <h1 className="text-4xl mb-4 font-bold">{aboutus.title}</h1>
         <p className="text-lg mb-10 md:mx-52">{aboutus.content}</p>
         <div className="aboutus-image-container">

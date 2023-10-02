@@ -2,11 +2,15 @@ import React from 'react';
 import { contact } from '@/constants/contact';
 import { Animation } from './Animation';
 import { ContactForm } from './ContactForm.jsx'; 
+import Head from 'next/head';
 
 export function Contact() {
   return (
     <Animation>
       <div className="my-52 flex flex-col justify-center items-center px-4 max-w-lg mx-auto">
+      <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <h1 id="contact" className="mb-10 text-4xl justify-center items-center font-normal">
           {contact.title}
         </h1>

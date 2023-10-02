@@ -3,12 +3,16 @@ import { home } from '@/constants/home';
 import Image from 'next/image';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import { Link } from 'react-scroll';
+import Head from 'next/head';
 import { Animation } from './Animation';
 
 export function Home() {
   return (
     <Animation>
       <div className="h-screen bg-gradient flex gap-5 px-5">
+      <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <div className="flex flex-1 flex-col justify-center">
           <h1 className="text-7xl font-bold">
             {home.title.base}{' '}

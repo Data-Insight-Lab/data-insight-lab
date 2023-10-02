@@ -3,6 +3,7 @@ import { services } from '@/constants/services';
 import { Animation } from './Animation';
 import { ServiceCard } from './ServiceCard';
 import React from 'react';
+import Head from 'next/head';
 import { steps as defaultSteps } from '@/constants/steps';
 import { RiNumber1, RiNumber2, RiNumber3, RiNumber4,} from 'react-icons/ri';
 
@@ -19,6 +20,9 @@ export function Services() {
   return (
     <Animation>
       <div className="my-52 flex flex-col md:flex-row md:justify-normal items-center justify-center gap-2 bg-gradient-services px-2">
+      <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         {services.map(item => (
           <ServiceCard key={item.id} title={item.title} content={item.content} icon={item.icon} />
         ))}
