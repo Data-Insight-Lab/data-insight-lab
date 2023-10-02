@@ -18,7 +18,7 @@ export function AboutUs() {
     <Animation>
       <div className="my-52 text-center bg-gradient-blog px-4 py-8">
       <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <h1 className="text-4xl mb-4 font-bold">{aboutus.title}</h1>
         <p className="text-lg mb-10 md:mx-52">{aboutus.content}</p>

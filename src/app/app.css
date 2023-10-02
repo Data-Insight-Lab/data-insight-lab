@@ -71,23 +71,23 @@
   .step {
     color: white;
     flex-basis: calc(50% - 10px);
-    margin-bottom: 10px;
+    margin-bottom: 0.75rem;
     font-size: 1rem; 
   }
 
   .step-icon {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 10px;
+    margin-right: 0.75rem;
   }
 
   .image-gallery {
     display: inline-flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.75rem;
     justify-content: center;
     align-items: center;
-    width: calc(70% - 50px);
+    width: calc(70% - 3rem);
     height: auto;
     max-width: 100%;
   }
@@ -95,15 +95,12 @@
   .aboutus-image-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 
   h1 {
     font-size: 1.5rem; 
   }
-}
-
-@media (max-width: 768px) {
   .button {
     padding: 16px 24px; 
     font-size: 1.25rem;
@@ -121,14 +118,31 @@
     background-color: black;
     color: white; 
   }
-  .clickable {
+    .clickable {
   cursor: pointer;
-}
-  .answer {
-    display: none;
-  }
-.custom-button {
-  padding: 5px 10px; /* Ajuste os valores de padding conforme necessário */
 }
 
 }
+  @media (max-width: 768px) {
+    
+    .button {
+      padding: 1rem 1.5rem; 
+      font-size: 1.25rem;
+    }
+
+    .text-input {
+      padding: o.75rem; 
+      font-size: 1rem; 
+    }
+
+    .black-box {
+      margin-top: 0;
+    }
+
+    .bg-black {
+      background-color: black;
+      color: white; 
+    }
+
+  }
+
