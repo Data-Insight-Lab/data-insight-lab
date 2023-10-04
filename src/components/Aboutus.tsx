@@ -13,6 +13,18 @@ import PostgresImage from '../../public/postgres.png';
 import AirFlowImage from '../../public/airflow.png';
 import { Animation } from './Animation';
 
+const images = [
+  RedshiftImage,
+  GrafanaImage,
+  SQLImage,
+  SupersetImage,
+  TableauImage,
+  PowerBIImage,
+  PostgresImage,
+  AirFlowImage,
+  AWSImage,
+];
+
 export function AboutUs() {
   return (
     <Animation>
@@ -20,64 +32,32 @@ export function AboutUs() {
       <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-        <h1 className="text-4xl mb-4 font-bold">{aboutus.title}</h1>
-        <p className="text-lg mb-10 md:mx-52">{aboutus.content}</p>
-        <div className="aboutus-image-container">
-          <Image
-            src={aboutus.image}
-            alt="About Us"
-            style={{ height: '22rem', width: '33rem' }}
-            className="rounded-lg"
-          />
-        </div>
+        <div className="flex flex-wrap items-center">
+  <div className="w-full md:w-1/2">
+    <Image
+      src={aboutus.image}
+      alt="image"
+      style={{ height: '25rem', width: '25rem' }}
+      className="rounded-lg"
+    />
+  </div>
+  <div className="w-full md:w-1/2">
+    <h1 className="text-4xl mb-4 font-bold">{aboutus.title}</h1>
+    <p className="text-lg mb-10">{aboutus.content}</p>
+  </div>
+</div>
         <h2 className="text-4xl my-6">Our Tools</h2>
         <div className="image-gallery">
-          <Image
-            src={RedshiftImage}
-            alt="Redshift"
-            style={{ height: '5rem', width: '10rem' }}
-          />
-          <Image
-            src={GrafanaImage}
-            alt="Grafana"
-            style={{ height: '5rem', width: '5rem' }}
-          />
-          <Image
-            src={SQLImage}
-            alt="SQL"
-            style={{ height: '4rem', width: '6.5rem' }}
-          />
-          <Image
-            src={SupersetImage}
-            alt="Superset"
-            style={{ height: '4rem', width: '5.5rem' }}
-          />
-          <Image
-            src={TableauImage}
-            alt="Tableau"
-            style={{ height: '4rem', width: '7rem' }}
-          />
-          <Image
-            src={PowerBIImage}
-            alt="Power BI"
-            style={{ height: '3rem', width: '10rem' }}
-          />
-          <Image
-            src={PostgresImage}
-            alt="Postgres"
-            style={{ height: '5rem', width: '5rem' }}
-          />
-          <Image
-            src={AirFlowImage}
-            alt="Airflow"
-            style={{ height: '6rem', width: '9rem' }}
-          />
-          <Image
-            src={AWSImage}
-            alt="AWS"
-            style={{ height: '5rem', width: '5rem' }}
-          />
-        </div>
+        {images.map((image, index) => (
+          <div key={index} className="aboutus-image-container">
+            <Image
+              src={image}
+              alt={`Image ${index + 1}`} 
+              className="rounded-lg"
+            />
+          </div>
+        ))}
+      </div>
         <div>
           <a href="#contact">
             <button className="button mt-10 custom-button">Get in contact</button>

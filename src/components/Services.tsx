@@ -10,12 +10,6 @@ import { RiNumber1, RiNumber2, RiNumber3, RiNumber4,} from 'react-icons/ri';
 export function Services() {
   const steps = defaultSteps || [];
 
-  const iconComponents = [
-    RiNumber1,
-    RiNumber2,
-    RiNumber3,
-    RiNumber4,
-  ];
 
   return (
     <Animation>
@@ -28,19 +22,19 @@ export function Services() {
         ))}
       </div>
       <div className="black-box">
-        <h2 className="box-title">Step-by-Step Contact</h2>
-        <div className="step-list">
-  {steps.map((steps, index) => (
-    <div className="step" key={index}>
-      <h3>
-        <span className="step-icon">
-          {React.createElement(steps.icon)}
-        </span>
-        {steps.title}
-      </h3>
-      <p>{steps.content}</p>
-    </div>
-  ))}
+  <h2 className="box-title">Step-by-Step Contact</h2>
+  <div className="step-list">
+    {steps.map((step, index) => (
+      <div className="step" key={index}>
+        <h3 className="text-lg sm:text-lg">
+          <span className="step-icon">
+            {React.createElement(step.icon)}
+          </span>
+          {step.title}
+        </h3>
+        <p className="text-sm sm:text-base">{step.content}</p>
+      </div>
+    ))}
 </div>
       </div>
       <div className="mt-3 items-center justify-center text-center">
