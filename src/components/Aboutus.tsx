@@ -37,8 +37,8 @@ export function AboutUs() {
     <Image
       src={aboutus.image}
       alt="image"
-      style={{ height: '25rem', width: '25rem' }}
-      className="rounded-lg"
+      className="rounded-lg responsive-image"
+      priority
     />
   </div>
   <div className="w-full md:w-1/2">

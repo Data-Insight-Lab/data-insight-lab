@@ -16,8 +16,7 @@ export function Blog() {
     <Image
       src={blog.image}
       alt="image"
-      style={{ height: '22rem', width: '33rem' }}
-      className="rounded-lg"
+      className="rounded-lg responsive-image"
     />
   </div>
   <div className="md:w-1/2 md:ml-4">
