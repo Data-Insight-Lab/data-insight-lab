@@ -23,7 +23,7 @@ export function Header() {
           duration={100}
           className="flex gap-4 items-center text-xl font-bold text-gradient cursor-pointer"
         >
-          <Image src={Logo} alt="logo" height={60} width={60} />
+          <Image src={Logo} alt="logo" height={70} width={70} />
           Data Insight Lab
         </Link>
 
