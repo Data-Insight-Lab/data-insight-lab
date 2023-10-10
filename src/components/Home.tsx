@@ -25,8 +25,7 @@ export function Home() {
           <Image
             src={home.image}
             alt="image"
-            style={{ height: '22rem', width: '33rem' }}
-            className="rounded-3xl"
+            className="rounded-3xl responsive-image"
           />
         </div>
         <Link
