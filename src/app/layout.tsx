@@ -46,7 +46,7 @@ export default function RootLayout({
         }}
       />
     </>
-  
+    <meta name="facebook-domain-verification" content="8jk71vsht7gpix0jk3scz0m3jhh5uk" />
       </Head>
       <body className={inter.className}>
         <Header />
