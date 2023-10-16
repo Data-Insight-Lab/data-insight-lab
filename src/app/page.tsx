@@ -1,3 +1,5 @@
+'use client';
+
 import { AboutUs } from '@/components/Aboutus';
 import { Blog } from '@/components/Blog';
 import { Contact } from '@/components/Contact';
@@ -31,6 +33,7 @@ export default function App() {
       <section id="faq">
         <FAQ />
       </section>
+      
     </div>
   );
 }
