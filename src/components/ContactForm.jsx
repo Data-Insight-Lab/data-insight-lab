@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -9,23 +10,25 @@ export const ContactForm = () => {
   const form = useRef();
 
   const sendEmail = async (e) => {
-
+    e.preventDefault();
 
     try {
-      const result = await emailjs.sendForm(
+      await emailjs.sendForm(
         'service_wczgbl2',
         'template_fa3l7oc',
         form.current,
         'VvWaVcxO1N10Z-kfY'
       );
-      console.log(result.text);
+
+      window.location.href = '/typ';
     } catch (error) {
       console.log(error.text);
     }
   };
 
-  
+
   return (
+    <div>
     <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
       <label className="text-gray-700">Name</label>
       <input
@@ -75,5 +78,6 @@ export const ContactForm = () => {
         Send
       </button>
     </form>
+     </div>
   );
-};
+  }; 
