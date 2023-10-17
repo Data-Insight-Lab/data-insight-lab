@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { FB_PIXEL_ID } from '../lib/fpixel'
+import { FB_PIXEL_ID } from '../components/lib/fpixel'
 
 export default function Document() {
   return (
