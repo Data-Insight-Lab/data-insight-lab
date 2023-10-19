@@ -2,8 +2,6 @@ import Head from 'next/head';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Inter } from 'next/font/google';
-import Script from 'next/script'
-import Document from './document';
 import './app.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -28,7 +26,6 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />   
-        <Document/>
       </Head>
       <body className={inter.className}>
         <Header />
