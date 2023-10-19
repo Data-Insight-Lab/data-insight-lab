@@ -8,7 +8,7 @@ export default function Document() {
     <Html>
       <Head>
         <noscript>
-          <img
+          <Image
             height="1"
             width="1"
             style={{ display: 'none' }}
