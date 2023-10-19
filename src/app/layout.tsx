@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />   
-        <Document></Document>
+        <Document/>
       </Head>
       <body className={inter.className}>
         <Header />
