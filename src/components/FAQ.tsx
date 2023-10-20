@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { faq } from '@/constants/faq';
 import { Animation } from './Animation';
