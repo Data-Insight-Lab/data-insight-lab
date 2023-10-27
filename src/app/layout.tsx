@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
+import  Analytics  from '@/components/FBPixel'
 import { Inter } from 'next/font/google';
 import './app.css';
 
@@ -33,7 +34,7 @@ export default function RootLayout({
         <div>{children}</div>
       
         <Footer />
-
+<Analytics/>
       </body>
     </html>
   );
