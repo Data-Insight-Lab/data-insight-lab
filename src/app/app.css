@@ -204,7 +204,7 @@
       display: none;
     }
     .image-gallery {
-      width: calc(50% - 0.5rem);
+      width: calc(50% - 0.25rem);
       gap: 0.25rem;
     }
   
