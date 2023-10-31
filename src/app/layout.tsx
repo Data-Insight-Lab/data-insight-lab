@@ -35,6 +35,7 @@ export default function RootLayout({
       
         <Footer />
 <Analytics/>
+<meta name="facebook-domain-verification" content="8jk71vsht7gpix0jk3scz0m3jhh5uk" />
       </body>
     </html>
   );
