@@ -209,7 +209,9 @@
     }
   
     .aboutus-image-container {
-      display: none
+      flex-basis: calc(30% - 0.1rem); 
+      max-width: calc(20% - 0.1rem); 
+      height: auto; 
     }
     .h1{
       font-size: 1rem;
